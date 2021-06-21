@@ -1,0 +1,26 @@
+<div class="app">
+
+    <div class="bg"></div>
+
+    <form [formGroup]="registerForm">
+        <header>
+            <img src="assets/logo1.png">
+        </header>
+
+        <div class="inputs">
+            <input type="email" formControlName= "email" name="email" placeholder="email">
+            <div *ngIf="(registerForm.get('email')?.touched || registerForm.get('email')?.dirty) && registerForm.get('email')?.errors">invalid username</div>
+            <input type="text" formControlName= "uname" name="account" placeholder="username">
+            <div *ngIf="(registerForm.get('uname')?.touched || registerForm.get('uname')?.dirty) && registerForm.get('uname')?.errors">invalid username</div>
+            <input type="password" formControlName= "pswd" name="password" placeholder="password">
+        </div>
+        <button type="submit">Continue</button>
+    </form>
+
+    <footer>
+        
+        <p>have an account? <a href="login">Login</a></p>
+    </footer>
+
+
+</div>
